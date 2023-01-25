@@ -249,22 +249,6 @@
 				<div class="col">
 					<div class="destinations_container item_grid">
 
-						{% for dest in dests %}
-						<!-- Destination {% static 'styles/bootstrap4/bootstrap.min.css' %}-->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{{baseUrl}}/{{dest.img}}" alt="error">
-								{% if dest.offer %}
-								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-								{% endif %}
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
-								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
-								<div class="destination_price">From ${{dest.price}}</div>
-							</div>
-						</div>
-						{% endfor%}
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
@@ -288,7 +272,23 @@
 								<div class="destination_price">From $679</div>
 							</div>
 						</div>
-
+						
+						{% for dest in dests %}
+						<!-- Destination {% static 'styles/bootstrap4/bootstrap.min.css' %}-->
+						<div class="destination item">
+							<div class="destination_image">
+								<img src="{{dest.img.url}}" alt="error">
+								{% if dest.offer %}
+								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+								{% endif %}
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+								<div class="destination_price">From ${{dest.price}}</div>
+							</div>
+						</div>
+						{% endfor%}
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
@@ -300,7 +300,7 @@
 								<div class="destination_price">From $679</div>
 							</div>
 						</div>
-
+						
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
@@ -318,7 +318,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- Testimonials -->
 
 	<div class="testimonials" id="testimonials">
