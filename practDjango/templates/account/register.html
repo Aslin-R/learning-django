@@ -22,6 +22,12 @@
         <input type="text" name="password1" placeholder="Password" id=""><br>
         <input type="text" name="password2" placeholder="Confirm Password" id=""><br><br>
         <input type="submit" value="submit">
+
     </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
 </body>
 </html>
