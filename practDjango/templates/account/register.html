@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 </head>
-<body>
+<body >
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
     <form action="register" method="post">
         {% csrf_token %}
-        <input type="text" name="first_name" placeholder="first_name" id="">
-        <input type="text" name="last_name" placeholder="last_name" id="">
-        <input type="text" name="username" placeholder="username" id="">
-        <input type="email" name="first_name" placeholder="Email" id="">
-        <input type="text" name="password1" placeholder="Password" id="">
-        <input type="text" name="password2" placeholder="Confirm Password" id="">
+        <h2>Register form</h2>
+        <input type="text" name="first_name" placeholder="first_name" id=""><br>
+        <input type="text" name="last_name" placeholder="last_name" id=""><br>
+        <input type="text" name="username" placeholder="username" id=""><br>
+        <input type="email" name="email" placeholder="Email" id=""><br>
+        <input type="text" name="password1" placeholder="Password" id=""><br>
+        <input type="text" name="password2" placeholder="Confirm Password" id=""><br><br>
         <input type="submit" value="submit">
     </form>
 </body>
