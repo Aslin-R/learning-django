@@ -1,0 +1,1 @@
+"I am currently studying the Django course on Coursera, which is provided by the platform Meta. I have created this repository to share my progress and any relevant code snippets from the course on GitHub."
