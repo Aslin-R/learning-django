@@ -44,4 +44,12 @@ def menuitems(request,dish):
     desc=items[dish]
     return HttpResponse(f"<h2> {dish} </h2>"+desc)
 
+def drinks(request,drink_name):
+    drink={
+        'mocha':'type of coffee',
+        'tea':'type of beverage'
+    }
+    choice_of_drink =drink[drink_name]
+    return HttpResponse(f"<h2>{drink_name} <br>{choice_of_drink} </h2>")
+
 
