@@ -27,7 +27,14 @@ def home(request):
 def aslin(request):
     return HttpResponse("I am Aslin-R")
 
+def qryview(request): 
+    name = request.GET['name'] 
+    id = request.GET['id'] 
+    return HttpResponse("Name:{} UserID:{}".format(name, id)) 
 
+
+def showform(request): 
+    return render(request,'templates/form.html') 
 
 
 
