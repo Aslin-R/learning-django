@@ -6,7 +6,7 @@ urlpatterns=[
     path('aslin/',views.aslin,name='aslin'),
     path('getuser/', views.qryview, name='qryview') ,
     path("showform/", views.showform, name="showform"), 
-   
+    path('dishes/<str:dish>',views.menuitems)
 
 ]
 

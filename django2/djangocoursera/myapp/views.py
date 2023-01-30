@@ -26,7 +26,7 @@ def home(request):
 
 def aslin(request):
     return HttpResponse("I am Aslin-R")
-
+    
 def qryview(request): 
     name = request.GET['name'] 
     id = request.GET['id'] 
@@ -36,5 +36,12 @@ def qryview(request):
 def showform(request): 
     return render(request,'templates/form.html') 
 
+def menuitems(request,dish):
+    items={
+        'biriyani':"chicken biriyani is nice",
+        'parota':'Parota with chicken'
+    }
+    desc=items[dish]
+    return HttpResponse(f"<h2> {dish} </h2>"+desc)
 
 
