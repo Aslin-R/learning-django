@@ -4,7 +4,6 @@ from django.urls import path,re_path
 
 urlpatterns=[
     path('info/',views.info,name='home'),
-
     path('',views.home,name='home'),
     path('aboutus/',views.about,name='about'),
     path('book/',views.book,name='book'),

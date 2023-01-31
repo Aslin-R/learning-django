@@ -55,5 +55,7 @@ def about(request):
 def book(request):
     return HttpResponse('Make a booking')
 
+from django.http import Http404, HttpResponse 
+
 
 
