@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import *
 # Create your views here.
 
-def home(request):
+def info(request):
     
     path=request.path
     scheme=request.scheme
@@ -45,5 +45,15 @@ def drinks(request,drink_name):
 def menu(request,num):
     items=['Dosai','Puttu','Biriyani']
     return HttpResponse(f'<h2>{items[num]}</h2>')
+
+def home(request):
+    return HttpResponse('Welcome to Little Lemon!')
+
+def about(request):
+    return HttpResponse('About us')
+
+def book(request):
+    return HttpResponse('Make a booking')
+
 
 
