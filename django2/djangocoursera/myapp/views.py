@@ -42,4 +42,8 @@ def drinks(request,drink_name):
     choice_of_drink =drink[drink_name]
     return HttpResponse(f"<h2>{drink_name} <br>{choice_of_drink} </h2>")
 
+def menu(request,num):
+    items=['Dosai','Puttu','Biriyani']
+    return HttpResponse(f'<h2>{items[num]}</h2>')
+
 
