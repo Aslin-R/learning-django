@@ -6,6 +6,7 @@ class Menu(models.Model):
     cuisine=models.CharField(max_length=100)
     price=models.IntegerField()
     available=models.BooleanField(default=True)
+    item_id=models.IntegerField(default=1)
 
     
 
