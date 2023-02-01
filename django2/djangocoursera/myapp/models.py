@@ -8,7 +8,9 @@ class Menu(models.Model):
     available=models.BooleanField(default=True)
     item_id=models.IntegerField(default=1)
 
-    
+class Drinks(models.Model):
+    drink_name=models.CharField(max_length=100)
+    price=models.IntegerField()
 
     def __str__(self):
         return self.name+' : '+self.cuisine
