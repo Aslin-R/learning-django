@@ -2,6 +2,8 @@
 from django import forms
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label='Your Name', max_length=100)
+    name = forms.CharField(label='Name', max_length=100)
     email = forms.EmailField(label='Email Address')
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea,label='Enter something')
+    dob=forms.DateField(widget=forms.NumberInput(attrs={'type':'date'}))
+    gender=forms.ChoiceField(choices=[('M','Male'),('F','Female')],label='Gender')
