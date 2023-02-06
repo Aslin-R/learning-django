@@ -55,7 +55,15 @@ def about(request):
 def book(request):
     return HttpResponse('Make a booking')
 
-from django.http import Http404, HttpResponse 
+from .forms import ContactForm
 
-
-
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # do something with the form data
+            # ...
+            return HttpResponse("Form submitted successfully.")
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})

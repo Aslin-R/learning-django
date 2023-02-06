@@ -8,6 +8,8 @@ urlpatterns=[
     path('aboutus/',views.about,name='about'),
     path('book/',views.book,name='book'),
 
+    path('contact/', views.contact_view, name='contact'),
+
     path('getuser/', views.qryview, name='qryview') ,
     path("showform/", views.showform, name="showform"), 
     path('drinks/<str:drink_name>',views.drinks,name='drink_name'),
