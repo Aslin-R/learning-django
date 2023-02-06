@@ -17,8 +17,3 @@ class Drinks(models.Model):
     category_id=models.ForeignKey(DrinksCategory,on_delete=models.PROTECT,default=None)
 
 
-
-<<<<<<< HEAD
-    
-=======
->>>>>>> a89c04b44cadc735b6469291e38ffd92c5dce916
