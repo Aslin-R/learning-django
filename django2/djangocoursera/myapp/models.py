@@ -35,5 +35,6 @@ class Booking(models.Model):
     guest_count=models.IntegerField()
     reservation_time=models.DateField(auto_now=True)
     comments=models.CharField(max_length=1000)
+    
 
 
