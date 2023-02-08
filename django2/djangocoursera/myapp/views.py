@@ -35,3 +35,11 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+from myapp.forms import InputForm
+
+def form_view(request):
+    form=InputForm()
+    context={'form':form}
+
+    return render(request,'home.html',context)

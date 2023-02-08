@@ -1,0 +1,13 @@
+<p>hello</p>
+
+<form action="form_view" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Enter">
+</form>
+
+
+
+
+
