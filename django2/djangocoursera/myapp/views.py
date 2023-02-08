@@ -36,10 +36,14 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-from myapp.forms import InputForm
+from myapp.forms import LogForm
 
 def form_view(request):
-    form=InputForm()
+    form=LogForm()
+    if request.method=='POST':
+        form=LogForm(request.POST)
+        if form.is_valid():
+            form.save()
     context={'form':form}
 
-    return render(request,'home.html',context)
+    return render(request,'home.html',context) 
