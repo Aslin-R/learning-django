@@ -14,4 +14,11 @@ class LogForm(forms.ModelForm):
     class Meta:
         model=Logger
         fields='__all__'
+
+from .models import Booking
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model=Booking
+        fields='__all__'
         

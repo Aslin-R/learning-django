@@ -1,23 +1,12 @@
 from django.shortcuts import render
 from django.http import *
-# Create your views here.
+from myapp.forms import LogForm
+from myapp.forms import BookingForm
+
 
 def intro(request): 
-    
     return HttpResponse("Welcome to Django") 
 
-def qryview(request): 
-    name = request.GET['name'] 
-    id = request.GET['id'] 
-    return HttpResponse("Name:{} UserID:{}".format(name, id)) 
-
-def drinks(request,drink_name):
-    drink={
-        'mocha':'type of coffee',
-        'tea':'type of beverage'
-    }
-    choice_of_drink =drink[drink_name]
-    return HttpResponse(f"<h2>{drink_name} <br>{choice_of_drink} </h2>")
 
 def menu(request,num):
     items=['Dosai','Puttu','Biriyani']
@@ -36,14 +25,20 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-from myapp.forms import LogForm
-
-def form_view(request):
-    form=LogForm()
-    if request.method=='POST':
-        form=LogForm(request.POST)
+def forms_view(request):
+     form = LogForm()
+     if request.method == 'POST':
+        form = LogForm(request.POST)
         if form.is_valid():
             form.save()
-    context={'form':form}
+     context = {"form" : form}
+     return render(request, "home.html", context)
 
-    return render(request,'home.html',context) 
+def form_view(request):
+     form = BookingForm()
+     if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+             form.save()
+     context = {"form" : form}
+     return render(request, "booking.html", context)

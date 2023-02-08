@@ -29,4 +29,11 @@ class Logger(models.Model):
     last_name=models.CharField(max_length=100)
     time_log=models.TimeField(help_text='Enter the current time')
 
+class Booking(models.Model):
+    first_name=models.CharField(max_length=200)
+    last_name=models.CharField(max_length=200)
+    guest_count=models.IntegerField()
+    reservation_time=models.DateField(auto_now=True)
+    comments=models.CharField(max_length=1000)
+
 
