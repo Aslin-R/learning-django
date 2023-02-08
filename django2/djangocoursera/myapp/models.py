@@ -16,5 +16,13 @@ class Drinks(models.Model):
     price=models.IntegerField()
     category_id=models.ForeignKey(DrinksCategory,on_delete=models.PROTECT,default=None)
 
+class Customer(models.Model):
+    name=models.CharField(max_length=100)
+    reservation_day=models.CharField(max_length=100)
+    seats=models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
 
 
