@@ -36,5 +36,7 @@ class Booking(models.Model):
     reservation_time=models.DateField(auto_now=True)
     comments=models.CharField(max_length=1000)
     
+    def __str__(self): 
+        return f"{self.last_name}, {self.first_name}" 
 
 

@@ -16,4 +16,10 @@ admin.site.register(Drinks)
 
 admin.site.register(Logger)
 
-admin.site.register(Booking)
+from django.contrib import admin
+
+@admin.register(Booking) 
+
+class PersonAdmin(admin.ModelAdmin): 
+    list_display = ("last_name", "first_name") 
+    search_fields = ("first_name__startswith", ) 
