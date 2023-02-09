@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import *
 from myapp.forms import LogForm
 from myapp.forms import BookingForm
+from django.contrib.auth.decorators import login_required 
 
-
+@login_required 
+ 
 def intro(request): 
     return HttpResponse("Welcome to Django") 
 
