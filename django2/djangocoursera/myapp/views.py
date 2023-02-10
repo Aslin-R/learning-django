@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import *
 from myapp.forms import BookingForm
 from django.contrib.auth.decorators import login_required 
+from .models import Menu
 
 def intro(request): 
     return HttpResponse("Welcome to Django") 
@@ -39,6 +40,17 @@ def about(request):
         return render(request,'about.html',about_content)
 
 def menus(request):
-    content={'items':"Biriyani,parota,chicken,kuruma"}
-    return render(request,'menu.html',content)
+    newmenu={'mains':[
+        {'name':'Biriyani','price':'120'},
+        {'name':'Parota','price':'15'},
+        {'name':'Chapathi','price':'10'}
+    ]}
+    return render(request,'menu.html',newmenu)
+
+def menu_by_id(request):
+    newmenu=Menu.objects.all()
+    newmenu_dict={'menu':newmenu}
+    print(newmenu_dict)
+    return render(request,'menu_card.html',newmenu_dict)
+
 
