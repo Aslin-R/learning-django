@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from django.http import *
 from myapp.forms import BookingForm
-from django.contrib.auth.decorators import login_required 
 from .models import Menu
 
 def intro(request): 
     return HttpResponse("Welcome to Django") 
-
 
 def menu(request,num):
     items=['Dosai','Puttu','Biriyani']
@@ -34,11 +32,6 @@ def form_view(request):
      context = {"form" : form}
      return render(request, "booking.html", context)
 
-def about(request):
-        about_content={'about':"Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day."}
-
-        return render(request,'about.html',about_content)
-
 def menus(request):
     newmenu={'mains':[
         {'name':'Biriyani','price':'120'},
@@ -54,11 +47,24 @@ def menu_by_id(request):
     return render(request,'menu_card.html',newmenu_dict)
 
 
-def home(request): 
-    return render(request, "home.html", {}) 
-
 def register(request): 
     return render(request, "register.html", {}) 
 
 def login(request): 
     return render(request, "login.html", {}) 
+
+#week 4 lab
+
+def home(request): 
+    return render(request, "home.html") 
+
+def about(request):
+    return render(request,'about.html')
+
+def book(request): 
+    return render(request, "book.html") 
+
+def index(request): 
+    return render(request, "index.html") 
+def base(request): 
+    return render(request, "base.html") 

@@ -14,9 +14,14 @@ urlpatterns=[
     re_path(r'^menu/([0-9]{2})/$',views.menu),
 
 
-    path('home/', views.home, name='home'), 
+     
     path('register/', views.register, name='register'),  
     path('login/', views.login, name='login'), 
+
+    path('about/',views.about),
+    path('home/', views.home, name='home'),
+    path('index/',views.index),
+    path('base/',views.base),
 
 ]
 
