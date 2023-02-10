@@ -8,12 +8,6 @@ class ContactForm(forms.Form):
     dob=forms.DateField(widget=forms.NumberInput(attrs={'type':'date'}))
     gender=forms.ChoiceField(choices=[('M','Male'),('F','Female')],label='Gender')
 
-from .models import Logger
-
-class LogForm(forms.ModelForm):
-    class Meta:
-        model=Logger
-        fields='__all__'
 
 from .models import Booking
 

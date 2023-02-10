@@ -1,11 +1,8 @@
 from django.shortcuts import render
 from django.http import *
-from myapp.forms import LogForm
 from myapp.forms import BookingForm
 from django.contrib.auth.decorators import login_required 
 
-@login_required 
- 
 def intro(request): 
     return HttpResponse("Welcome to Django") 
 
@@ -27,15 +24,6 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-def forms_view(request):
-     form = LogForm()
-     if request.method == 'POST':
-        form = LogForm(request.POST)
-        if form.is_valid():
-            form.save()
-     context = {"form" : form}
-     return render(request, "home.html", context)
-
 def form_view(request):
      form = BookingForm()
      if request.method == 'POST':
@@ -44,3 +32,13 @@ def form_view(request):
              form.save()
      context = {"form" : form}
      return render(request, "booking.html", context)
+
+def about(request):
+        about_content={'about':"Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day."}
+
+        return render(request,'about.html',about_content)
+
+def menus(request):
+    content={'items':"Biriyani,parota,chicken,kuruma"}
+    return render(request,'menu.html',content)
+

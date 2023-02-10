@@ -3,7 +3,7 @@ from .models import Menu
 from .models import MenuCategory
 from .models import DrinksCategory
 from .models import Drinks
-from .models import Logger
+
 from .models import Booking
 from .models import Employees
 
@@ -13,7 +13,7 @@ admin.site.register(Menu)
 admin.site.register(MenuCategory)
 admin.site.register(DrinksCategory)
 admin.site.register(Drinks)
-admin.site.register(Logger)
+
 admin.site.register(Employees)
 @admin.register(Booking) 
 
