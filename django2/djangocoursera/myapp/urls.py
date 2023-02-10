@@ -11,7 +11,12 @@ urlpatterns=[
     path('menus/',views.menus,name='menus'),
     path('booking/', views.form_view),
     path('menu/<int:num>',views.menu,name='menu'),
-    re_path(r'^menu/([0-9]{2})/$',views.menu)
+    re_path(r'^menu/([0-9]{2})/$',views.menu),
+
+
+    path('home/', views.home, name='home'), 
+    path('register/', views.register, name='register'),  
+    path('login/', views.login, name='login'), 
 
 ]
 

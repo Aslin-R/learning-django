@@ -54,3 +54,11 @@ def menu_by_id(request):
     return render(request,'menu_card.html',newmenu_dict)
 
 
+def home(request): 
+    return render(request, "home.html", {}) 
+
+def register(request): 
+    return render(request, "register.html", {}) 
+
+def login(request): 
+    return render(request, "login.html", {}) 

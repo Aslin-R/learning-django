@@ -1,13 +1,9 @@
-<p>I am Home</p>
-
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-
-    <input type="submit" value="Submit">
-</form>
+{% extends "base.html" %}
 
 
 
+{% block contents %} 
+<h2 align="center">This is Home page</h2> 
+{% endblock %} 
 
 
