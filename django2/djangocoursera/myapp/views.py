@@ -3,7 +3,7 @@ from django.http import *
 from myapp.forms import BookingForm
 from .models import Menu
 
-def intro(request): 
+def intro(): 
     return HttpResponse("Welcome to Django") 
 
 def menu(request,num):
